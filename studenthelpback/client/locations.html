@@ -1,0 +1,27 @@
+<head>
+    <title>StudentHelp</title>
+</head>
+
+<body>
+
+
+</body>
+<template name="locations">
+    <form class="new-location">
+        <select name="category">
+            {{#each categories}}
+            <option value={{_id}}>{{name}}</option>
+            {{/each}}
+        </select>
+        <input type="text" name="desc" placeholder="Add a description for you new location">
+    </form>
+    <ul>
+        {{#each locations}}
+        <li>
+            {{description}},  
+            {{cat_name catID}}
+            <a href="#" class="delete_location btn btn-danger">Delete</a>
+        </li>
+        {{/each}}
+    </ul>
+</template>

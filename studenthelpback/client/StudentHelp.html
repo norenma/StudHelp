@@ -1,0 +1,41 @@
+<head>
+  <title>Studenthelp</title>
+</head>
+
+<body>
+</body>
+
+<template name="StudentHelp">
+  
+  <br> <!--{{#if currentUser}}-->
+  <div id="main">
+    <div id="locationField">
+      <input id="autocomplete" placeholder="Enter your address" type="text">
+    </div>
+
+
+    <form class="new-location">
+      <select name="category" class="form-control" id="cat-select">
+        {{#each categories}}
+        <option value={{_id}}>{{name}}</option>
+        {{/each}}
+      </select>
+      <a href="categories.html" id="edit-cat" class="btn"><span class="glyphicon glyphicon-cog"></span></a>
+      <br>
+      <textarea rows="4" id="desc" type="text" name="desc" placeholder="Add a description for you new location"></textarea>
+      <a href="#" class="create_location btn"><span class="glyphicon glyphicon-ok"></span></a>
+    </form>
+
+
+    <p> Current places in the databse:</p>
+    <ul class="list-group">
+      {{#each locations}}
+      <li class="list-group-item">
+        <span class="loc-text">{{description}}, {{cat_name catID}}</span>
+        <a href="#" class="delete_location btn btn-danger del-loc" style="float:right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  <!--{{/if}}-->
+</template>

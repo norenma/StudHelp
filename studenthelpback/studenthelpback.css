@@ -1,0 +1,47 @@
+/* CSS declarations go here */
+/* CSS declarations go here */
+
+#login {
+    margin-top: 2%;
+    height: 3em;
+}
+.navbar-inverse {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+#main {
+    width: 80%;
+    margin: 0 auto;
+}
+.list-group {
+    width: 100%;
+    margin: 0;
+}
+.list-group-item {
+    height: 50px;
+    padding: 7px;
+}
+.input {
+    height: 17vh;
+}
+.loc-text {
+    margin-top: 4px;
+}
+#desc {
+    width: 100%;
+    resize: none;
+}
+#autocomplete {
+    height: 27px;
+    width: 100%;
+}
+#cat-select {
+    width: 100%;
+}
+#edit-cat {} #header-text, h4 {
+    color: white;
+    float: left;
+    margin: 15px;
+}
+
