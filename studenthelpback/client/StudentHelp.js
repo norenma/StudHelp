@@ -8,7 +8,7 @@ if (Meteor.isClient) {
 
 
 	// Helpers 
-	Template.StudentHelp.helpers({
+	Template.logged_in.helpers({
 		locations: function() {
 			return Locations.find();
 		},
@@ -22,7 +22,7 @@ if (Meteor.isClient) {
 
 
 	// Event handlers
-	Template.StudentHelp.events({
+	Template.logged_in.events({
 		// Event handler to add a location
 		"click .create_location": function(event, template) {
 			var $input = template.find('#cat-select');
