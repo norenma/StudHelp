@@ -2,9 +2,7 @@
        layoutTemplate: 'layout'  //can be any template name
      });
 	Router.route('/', function() {
-		if(Meteor.user()){
-			this.render('StudentHelp');
-		}
+		this.render('StudentHelp');
 	});
 
 	Router.route('/locations.html', function() {

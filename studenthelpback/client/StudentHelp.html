@@ -7,7 +7,11 @@
 
 <template name="StudentHelp">
   
-  <br> <!--{{#if currentUser}}-->
+  <br> {{#if currentUser}}
+    {{> logged_in}}
+  {{/if}}
+</template>
+<template name="logged_in">
   <div id="main">
     <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address" type="text">
@@ -37,5 +41,4 @@
       {{/each}}
     </ul>
   </div>
-  <!--{{/if}}-->
 </template>

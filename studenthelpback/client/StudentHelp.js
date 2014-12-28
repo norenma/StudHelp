@@ -50,14 +50,14 @@ if (Meteor.isClient) {
 	var autocomplete;
 
 	// init the logic for the autocomple form
-	function initGoogleMaps(){
+	function initGoogleMaps(template){
 		GoogleMaps.init({
 			'sensor': true,
 			'language': 'en', 
 			'libraries': 'places'
 			}, function() {
 					autocomplete = new google.maps.places.Autocomplete(
-						(this.find('#autocomplete')), {
+						(template.find('#autocomplete')), {
 							types: ['geocode']
 						}
 					);
@@ -68,24 +68,24 @@ if (Meteor.isClient) {
 
 
 	// Runs each time the user is logged in or out
-	Meteor.autorun(function() {
+	/*Meteor.autorun(function() {
 		var newUserId = Meteor.userId();
 		if (oldUserId === null && newUserId) {
 	    	console.log('The user logged in');
-	    	initGoogleMaps();
+	    	initGoogleMaps(this);
 		}
 		else if (newUserId === null && oldUserId) {
 	    	console.log('The user logged out');
 		} 
 		oldUserId = Meteor.userId();
-	});
+	});*/
 
 
 
-	Template.StudentHelp.rendered = function () {
-	/*	if(Meteor.userId() != null){
-			initGoogleMaps();
-		}*/
+	Template.logged_in.rendered = function () {
+		if(Meteor.userId() != null){
+			initGoogleMaps(this);
+		}
 		if(this.find('#autocomplete') == null){
 			alert("null2");
 		}
